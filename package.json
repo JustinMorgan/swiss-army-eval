@@ -1,6 +1,6 @@
 {
   "name": "swiss-army-eval",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Evaluate code from different languages into JS objects. More versatile and slightly gentler than JavaScript eval.",
   "main": "./index.coffee",
   "scripts": {
