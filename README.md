@@ -29,4 +29,6 @@ var rex = compile("regex", "^[123]+$", "ig");
 
 - GitHub Project: https://github.com/JustinMorgan/swiss-army-eval
 - Author: Justin Morgan (https://github.com/JustinMorgan)
-- License: MIT
+- License: Swiss-Army Eval is licensed under the [MIT][mit] license.
+
+[mit]: http://opensource.org/licenses/mit-license.php
