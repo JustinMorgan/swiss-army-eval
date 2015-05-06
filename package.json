@@ -1,8 +1,8 @@
 {
   "name": "swiss-army-eval",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Evaluate code from different languages into JS objects. More versatile and slightly gentler than JavaScript eval.",
-  "main": "index.coffee",
+  "main": "./index.coffee",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,7 +15,7 @@
     "eval",
     "compile"
   ],
-  "author": "JustinMorgan@GitHub",
+  "author": "Justin Morgan <justinmorgan.github@gmail.com> (https://github.com/JustinMorgan)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/JustinMorgan/swiss-army-eval/issues"

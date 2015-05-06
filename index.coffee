@@ -1,19 +1,9 @@
-# Description:
-#   Compiles CoffeeScript, Regex, or JS code into JavaScript objects. More versatile and slightly gentler than using eval.
-#   obj.compile <language>, <code>, <opt1, opt2, ...> - Compile <code> written in <language> according to <opts>.
-#
-# Dependencies:
-#   coffee-script
-#
-# Author:
-#   JustinMorgan@GitHub
-#
 coffee = require "coffee-script"
 
 compilers =
   RegExp: (pattern, flags) -> new RegExp pattern, flags
-  CoffeeScript: (code, opts) -> coffee.eval "() -> 'use strict'; " + code, opts
-  JavaScript: (code, args...) -> Function args..., "'use strict'; return (#{code});"
+  CoffeeScript: (code, opts) -> coffee.eval "'use strict' \n#{code}", opts
+  JavaScript: (code, args...) -> Function args..., "'use strict'; \nreturn (#{code});"
 
 module.exports =
   (language, code, opts...) ->

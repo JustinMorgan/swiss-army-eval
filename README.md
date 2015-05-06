@@ -1,14 +1,30 @@
 # Swiss Army Eval
 
-Evaluates code from different languages into JS objects. More versatile and slightly gentler than JavaScript eval.
+Evaluates code from different languages into JS objects. More versatile and slightly gentler than JavaScript's `eval`.
 
-### Usage
+## Usage
     
-    var one = compile("coffee", "do () -> 1 * 1");
-    //one === 1
+```
+var coffee = compile("coffee", "(a, b) -> a + b", {bare: true}) //> function(a, b) { return a + b; };
+console.log(coffee(2, -1))                                      //> 1
+
+var js = compile("js", "a - b", "a", "b"); //> function(a, b) { use strict"; return (a - b); };
+console.log(js(5, 3));                     //> 2
+
+var rex = compile("regex", "^[123]+$", "ig"); //> /^[123]+$/gi
+console.log(+("3".match(rex)[0]));            //> 3
+```
     
-    var two = compile("js", "(function(a, b) { return a - b; })()", 5, 3);
-    //two === 2
-    
-    var rex = compile("regex", "^[123]+$", "g");
-    //rex is equivalent to /^[123]+$/g
+##About
+
+### GitHub Project
+
+https://github.com/JustinMorgan/swiss-army-eval
+
+### Author
+
+Justin Morgan (https://github.com/JustinMorgan)
+
+### License
+
+MIT
