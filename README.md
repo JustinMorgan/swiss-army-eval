@@ -1,6 +1,6 @@
-# Swiss Army Eval
+# swiss-army-eval
 
-Evaluates code from different languages into JS objects. More versatile and slightly gentler than JavaScript's `eval`.
+Evaluate code from different languages and return JS objects. More versatile and slightly gentler than JavaScript's `eval`.
 
 ## Usage
     
