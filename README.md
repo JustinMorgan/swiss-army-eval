@@ -14,8 +14,9 @@ console.log(js(5, 3));                     //> 2
 var rex = compile("regex", "^[123]+$", "ig"); //> /^[123]+$/gi
 console.log(+("3".match(rex)[0]));            //> 3
 ```
+  
     
-##About
+## About
 
 - GitHub Project: https://github.com/JustinMorgan/swiss-army-eval
 - Author: Justin Morgan (https://github.com/JustinMorgan)
