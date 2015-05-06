@@ -17,14 +17,6 @@ console.log(+("3".match(rex)[0]));            //> 3
     
 ##About
 
-### GitHub Project
-
-https://github.com/JustinMorgan/swiss-army-eval
-
-### Author
-
-Justin Morgan (https://github.com/JustinMorgan)
-
-### License
-
-MIT
+- GitHub Project: https://github.com/JustinMorgan/swiss-army-eval
+- Author: Justin Morgan (https://github.com/JustinMorgan)
+- License: MIT
