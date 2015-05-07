@@ -3,7 +3,7 @@ coffee = require "coffee-script"
 compilers =
   RegExp: (pattern, flags) -> new RegExp pattern, flags
   CoffeeScript: (code, opts) -> coffee.eval "'use strict' \n#{code}", opts
-  JavaScript: (code, args...) -> Function args..., "'use strict'; \nreturn (#{code});"
+  JavaScript: (code, args...) -> do Function args..., "'use strict'; \nreturn (#{code});"
 
 module.exports =
   (language, code, opts...) ->

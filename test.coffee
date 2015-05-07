@@ -1,13 +1,20 @@
 compile = require("./index.coffee")
 
-add = compile("coffee", "(a, b) -> a + b", {bare: true})
-console.log("CoffeeScript:\n " + add)       #> function(a, b) { return a + b; };
-console.log(">", add(2, -1))                #> 1
+console.log "--- CoffeeScript ---"
+add = compile("coffee", "(a, b) -> a + b")
 
-subtract = compile("js", "a - b", "a", "b")
-console.log("\nJavaScript:\n " + subtract)  #> function(a, b) { use strict"; return (a - b); };
-console.log(">", subtract(5, 3))            #> 2
+console.log "2 + -1: #{compile('coffee', '2 + -1')}" #> 2 + -1: 1
+console.log "add: #{add}"                            #> add: function(a, b) { return a + b; }
+console.log "add(2, -1): #{add(2, -1)}"              #> add(2, -1): 1
 
-rex = compile("regex", "^[123]+$", "ig")
-console.log("\nRegExp:\n " + rex)           #> /^[123]+$/gi
-console.log(">", "3".match(rex))            #> 3
+console.log "---JavaScript ---"
+subtract = compile("js", "function(a, b) { return a - b; }")
+
+console.log "5 - 3: #{compile('js', "5 - 3")}"
+console.log "subtract: #{subtract}"             #> subtract: function(a, b) { return a - b; }
+console.log "subtract(5, 3): #{subtract(5, 3)}" #> subtract(5, 3): 2
+
+console.log "--- RegExp ---"
+regex = compile("regex", "^[123]+$", "ig")
+console.log "regex: #{regex}"                     #> regex: /^[123]+$/gi
+console.log "regex.exec('3'): #{regex.exec('3')}" #> regex.exec('3'): 3
