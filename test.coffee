@@ -1,16 +1,14 @@
 compile = require("./index.coffee")
 
 console.log "--- CoffeeScript ---"
-add = compile("coffee", "(a, b) -> a + b")
-
 console.log "2 + -1: #{compile('coffee', '2 + -1')}" #> 2 + -1: 1
+add = compile("coffee", "(a, b) -> a + b")
 console.log "add: #{add}"                            #> add: function(a, b) { return a + b; }
 console.log "add(2, -1): #{add(2, -1)}"              #> add(2, -1): 1
 
 console.log "---JavaScript ---"
+console.log "5 - 3: #{compile('js', "5 - 3")}"  #> 5 - 3: 2
 subtract = compile("js", "function(a, b) { return a - b; }")
-
-console.log "5 - 3: #{compile('js', "5 - 3")}"
 console.log "subtract: #{subtract}"             #> subtract: function(a, b) { return a - b; }
 console.log "subtract(5, 3): #{subtract(5, 3)}" #> subtract(5, 3): 2
 
