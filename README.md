@@ -5,23 +5,16 @@ Evaluate code from different languages and return JS objects. More versatile and
 ## Usage
     
 ```
-var add = compile("coffee", "(a, b) -> a + b", {bare: true}) 
-//> function(a, b) { return a + b; }
+compile('coffee', '2 + -1')                 #> 1
+compile("coffee", "(a, b) -> a + b")        #> function(a, b) { return a + b; }
+compile("coffee", "(a, b) -> a + b")(2, -1) #> 1
 
-add(2, -1);                                   
-//> 1
+compile('js', "5 - 3")                                  #> 2
+compile("js", "function(a, b) { return a - b; }")       #> function(a, b) { return a - b; }
+compile("js", "function(a, b) { return a - b; }")(5, 3) #> 2
 
-var subtract = compile("js", "a - b", "a", "b"); 
-//> function(a, b) { use strict"; return (a - b); }
-
-subtract(5, 3);                     
-//> 2
-
-var rex = compile("regex", "^[123]+$", "ig"); 
-//> /^[123]+$/gi
-
-"3".match(rex);
-//> ["3"]
+compile("regex", "^[123]+$", "ig")           #> /^[123]+$/gi
+compile("regex", "^[123]+$", "ig").exec('3') #> 3
 ```
   
     
