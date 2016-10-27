@@ -20,7 +20,8 @@ compile("regex", "^[123]+$", "ig").exec('3') #> 3
     
 ## About
 
-- GitHub Project: https://github.com/JustinMorgan/swiss-army-eval
+- GitHub: https://github.com/JustinMorgan/swiss-army-eval
+- NPM: https://www.npmjs.com/package/swiss-army-eval
 - Author: Justin Morgan (https://github.com/JustinMorgan)
 - License: Swiss-Army Eval is licensed under the [MIT][mit] license.
 
