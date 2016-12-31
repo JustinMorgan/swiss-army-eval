@@ -5,17 +5,17 @@ Evaluate code from different languages and return JS objects. More versatile and
 ## Usage
     
 ```
-# Command                                               # Output
-compile('coffee', '2 + -1')                             #> 1
-compile("coffee", "(a, b) -> a + b")                    #> function(a, b) { return a + b; }
-compile("coffee", "(a, b) -> a + b")(2, -1)             #> 1
+# Command:                                            # Output:
+compile('coffee', '2 + -1')                           # 1
+compile("coffee", "(a, b) -> a + b")                  # function(a, b) {return a + b;}
+compile("coffee", "(a, b) -> a + b")(2, -1)           # 1
 
-compile('js', "5 - 3")                                  #> 2
-compile("js", "function(a, b) { return a - b; }")       #> function(a, b) { return a - b; }
-compile("js", "function(a, b) { return a - b; }")(5, 3) #> 2
+compile('js', "5 - 3")                                # 2
+compile("js", "function(a, b) {return a - b;}")       # function(a, b) {return a - b;}
+compile("js", "function(a, b) {return a - b;}")(5, 3) # 2
 
-compile("regex", "^[123]+$", "ig")                      #> /^[123]+$/gi
-compile("regex", "^[123]+$", "ig").exec('3')            #> 3
+compile("regex", "^[123]+$", "ig")                    # /^[123]+$/gi
+compile("regex", "^[123]+$", "ig").exec('3')          # 3
 ```
   
     
